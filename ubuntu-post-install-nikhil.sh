@@ -84,6 +84,15 @@ you might get a connection failure with github in that case you need to append t
 echo "185.199.108.133 raw.githubusercontent.com" >> /etc/hosts
 
 also copy the contents of the public key within ~/.ssh and add over to github
+then 
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+replace the ~/.zshrc as per the attached file
+and then source it
+source ~/.zshrc
+
 '''
 sudo -i
 
