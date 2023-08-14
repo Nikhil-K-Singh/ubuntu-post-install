@@ -1,5 +1,8 @@
 sudo apt-get update
 sudo apt install curl wget git
+git config --global user.email "nikhilnsr1998@gmail.com"
+git config --global user.name "nikhil"
+
 
 #python installation
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -14,6 +17,7 @@ sudo apt install trash-cli -y
 sudo apt install cpufetch -y
 sudo apt install neofetch -y
 sudo apt install tree -y
+sudo apt install htop
 sudo apt install bat -y
 sudo apt install ncdu -y
 sudo apt install vlc -y
@@ -53,7 +57,16 @@ docker run hello-world
 # sudo systemctl stop docker
 # to restart docker daemon
 # sudo systemctl start docker
-sudo apt install docker-compose -y
+
+#sudo apt install docker-compose -y for install version 1 of compose and below steps for version 2
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+
+curl -SL https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+# now you may only need to add the alias for $DOCKER_CONFIG/cli-plugins/docker-compose into the zshrc file.
+
 
 #CHROME installation
 sudo apt install wget
@@ -84,12 +97,18 @@ sudo apt-get install openssh-server
 sudo systemctl status ssh
 sudo systemctl start ssh
 sudo systemctl stop ssh
+#set the ssh key for github access.
+ssh-keygen -o -t rsa -C "nikhilnsr1998@gmail.com"
+cat .ssh/id_rsa.pub
+# copy the contents of the public key and add to github keys
+read -p "Press any key to resume ..."
 
 #Torrent client
 sudo apt update
 sudo apt upgrade
 sudo apt install qbittorrent -y
 sudo apt install onedrive -y
+
 
 #ZSH
 sudo apt-get update
