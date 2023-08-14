@@ -53,7 +53,7 @@ docker run hello-world
 # sudo systemctl stop docker
 # to restart docker daemon
 # sudo systemctl start docker
-
+sudo apt install docker-compose -y
 
 #CHROME installation
 sudo apt install wget
