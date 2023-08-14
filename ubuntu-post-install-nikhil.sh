@@ -96,6 +96,11 @@ source ~/.zshrc
 '''
 sudo -i
 
+wget -q https://raw.githubusercontent.com/Nikhil-K-Singh/ubuntu-gdm-set-background/main/ubuntu-gdm-set-background && chmod +x ubuntu-gdm-set-background
+sudo apt-get install libglib2.0-dev-bi
+sudo ./ubuntu-gdm-set-background --image /path/to/image.jpg
+
+
 #DOCKER installation
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done	#uninstalled old docker installation
 
