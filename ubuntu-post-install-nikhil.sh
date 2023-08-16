@@ -11,6 +11,7 @@ sudo apt install python3.11 -y
 sudo apt install python3-pip
 sudo apt install python-is-python3 -y
 sudo apt install python3.11-venv
+python3 -m pip install -U yt-dlp
 
 #utilities
 sudo apt install trash-cli -y

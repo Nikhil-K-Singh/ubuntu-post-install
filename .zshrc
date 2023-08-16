@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting zsh-autosuggestions sudo web-search jsontools bgnotify)
+plugins=(zsh-syntax-highlighting zsh-autosuggestions sudo jsontools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,5 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias jsonify="pp_json"
 alias py="python3.11"
+alias jsonify="pp_json"
+alias bat="batcat"
+alias google='f() { open_command "https://www.google.com/search?q=$1"};f'
+alias wiki='f() {open_command "https://en.wikipedia.org/wiki/$1"};f'
+alias yt='f() {open_command "https://www.youtube.com/results?search_query=$1"};f'
+alias yt_dlp="python3 -m yt_dlp"
+alias yt-dlp="yt_dlp"
