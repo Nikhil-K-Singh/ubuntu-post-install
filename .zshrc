@@ -105,5 +105,6 @@ alias bat="batcat"
 alias google='f() { open_command "https://www.google.com/search?q=$1"};f'
 alias wiki='f() {open_command "https://en.wikipedia.org/wiki/$1"};f'
 alias yt='f() {open_command "https://www.youtube.com/results?search_query=$1"};f'
+alias reddit='f() {open_command "https://www.reddit.com/search/?q=$1"};f'
 alias yt_dlp="python3 -m yt_dlp"
 alias yt-dlp="yt_dlp"
