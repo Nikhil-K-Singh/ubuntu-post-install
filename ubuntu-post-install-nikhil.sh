@@ -8,7 +8,7 @@ git config --global user.name "nikhil"
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.11 -y
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 sudo apt install python-is-python3 -y
 sudo apt install python3.11-venv
 python3 -m pip install -U yt-dlp
@@ -60,7 +60,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
 
 
 #openssh-server
-sudo apt-get install openssh-server
+sudo apt-get install openssh-server -y
 sudo systemctl status ssh
 sudo systemctl start ssh
 #set the ssh key for github access.
@@ -70,7 +70,7 @@ read -p "Press any key to resume ..."
 
 #File Sharing
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 sudo apt install qbittorrent -y
 sudo apt install onedrive -y
 
@@ -90,8 +90,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-replace the ~/.zshrc as per the attached file
-and then source it
+update the following line to match
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+then source it
 source ~/.zshrc
 
 '''
@@ -107,6 +108,7 @@ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
 
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg -y
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
@@ -114,7 +116,7 @@ echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  
+
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo docker run hello-world
 sudo groupadd docker
@@ -127,7 +129,7 @@ docker run hello-world
 # sudo systemctl start docker
 
 #sudo apt install docker-compose -y
-#for version 1 of compose and below steps
+#for version 1 of compose
 
 #for version 2
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
@@ -137,4 +139,3 @@ curl -SL https://github.com/docker/compose/releases/download/v2.6.1/docker-compo
 
 chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 # now you may only need to add the alias for $DOCKER_CONFIG/cli-plugins/docker-compose into the zshrc file.
-
